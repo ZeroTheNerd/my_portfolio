@@ -1,0 +1,83 @@
+.desktop-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://www.androidauthority.com/wp-content/uploads/2022/07/MacBook-Air-desktop-screenshot.jpg");
+  background-size: cover;
+  padding: 10px;
+}
+
+.chrome-window {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.chrome-window.normal {
+  width: 80vw;
+  height: 80vh;
+}
+
+.chrome-window.minimized {
+  width: 80vw;
+  height: 40px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chrome-window.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+.chrome-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 8px;
+  user-select: none;
+}
+
+.mac-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.mac-controls button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.mac-controls .red {
+  background-color: #ff5f56;
+}
+.mac-controls .yellow {
+  background-color: #ffbd2e;
+}
+.mac-controls .green {
+  background-color: #27c93f;
+}
+
+.chrome-title {
+  font-size: 14px;
+  color: #333;
+}
+
+.chrome-body {
+  height: calc(100% - 36px);
+  overflow-y: auto;
+}
+
+.content-wrapper {
+  padding: 20px;
+}
