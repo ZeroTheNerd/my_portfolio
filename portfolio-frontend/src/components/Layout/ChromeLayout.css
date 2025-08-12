@@ -1,12 +1,14 @@
 .desktop-screen {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: stretch; /*used to be center not stretch */
+  height: 90vh;
   background-image: url("https://www.androidauthority.com/wp-content/uploads/2022/07/MacBook-Air-desktop-screenshot.jpg");
   background-size: cover;
   padding: 10px;
+  /* overflow: hidden; */
 }
+
 
 .chrome-window {
   background-color: white;
@@ -14,6 +16,9 @@
   box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .chrome-window.normal {
@@ -43,6 +48,7 @@
   background-color: #f0f0f0;
   padding: 8px;
   user-select: none;
+  flex-shrink: 0;
 }
 
 .mac-controls {
@@ -74,10 +80,32 @@
 }
 
 .chrome-body {
-  height: calc(100% - 36px);
+  flex: 1;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .content-wrapper {
   padding: 20px;
+  flex-grow: 1;
 }
+
+/* Footer styles for sticky footer at bottom */
+.page-footer {
+  background-color: #72817e; /* Matches navbar color */
+  color: #ffffff; /* White text for contrast */
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent shrinking, stays visible at bottom */
+}
+
+/* @media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+} */

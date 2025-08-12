@@ -1,10 +1,17 @@
+
 /* Ensure the footer stays at the bottom */
 body {
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
+  /* min-height: 100vh;  Full viewport height  */
+}
+
+.chrome-window {
+  display: flex;
+  flex-direction: column;
+  /*min-height: 100%;  Fill parent height */
 }
 
 .main-content {

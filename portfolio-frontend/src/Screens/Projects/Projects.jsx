@@ -15,7 +15,7 @@ const Projects = () => {
   }, []);
 
   return (
-<div className="projects-container">
+/* <div className="projects-container">
       <h2>My Projects</h2>
       {projects.length === 0 ? (
         <p>Loading...</p>
@@ -34,7 +34,94 @@ const Projects = () => {
           ))}
         </ul>
       )}
+    </div> */
+
+    <div className="projects-container">
+      <h1>Projects</h1>
+      <p>Here’s where my portfolio projects will go.
+
+      </p>
+            <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>      <p>Here’s where my portfolio projects will go.
+
+      </p>
     </div>
+
   );
 };
 

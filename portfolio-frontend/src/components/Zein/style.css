@@ -1,6 +1,7 @@
 .zein {
   height: 66px;
   position: relative;
+  /* overflow: hidden; */
   width: 130px;
 }
 

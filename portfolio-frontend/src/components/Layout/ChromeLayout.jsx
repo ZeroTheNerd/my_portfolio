@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useWindowState } from "../../context/WindowContext";
 import NavBar from "../Navigation/NavBar";
+import Footer from "../Footer/Footer";
 import "./ChromeLayout.css";
 
 const ChromeLayout = ({ children }) => {
@@ -54,9 +55,11 @@ const ChromeLayout = ({ children }) => {
           <div className="chrome-title">Google Chrome</div>
         </div>
         <div className="chrome-body">
-          <NavBar />
-          <main className="content-wrapper">{children}</main>
+          <main className="content-wrapper main-content">{children}</main>
+                  <NavBar />
+
         </div>
+        <Footer />
       </div>
     </div>
   );
