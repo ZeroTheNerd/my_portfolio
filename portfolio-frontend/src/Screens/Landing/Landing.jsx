@@ -5,6 +5,8 @@ import "../../styles/global.css";
 import "./Landing.css";
 import linkedinpfp from '../../assets/images/linkedinpfp.png';
 import Ulogo from '../../assets/images/Ulogo.png';
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Landing = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -157,14 +159,15 @@ const Landing = () => {
 
         <div className="card connect-card">
           <h3>Connect with Me</h3>
-          <ul>
+          <ul className="social-links">
             <li>
               <a
                 href="https://www.linkedin.com/in/zachmartim"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                LinkedIn
+                <FaLinkedin />
               </a>
             </li>
             <li>
@@ -172,12 +175,16 @@ const Landing = () => {
                 href="https://github.com/ZeroTheNerd"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
-                GitHub
+                <FaGithub />
               </a>
             </li>
             <li>
-              <a href="mailto:your-email@example.com">Email</a>
+              <a href="zachmartim101@gmail.com"
+                 aria-label="Email" >
+                  <MdEmail />
+                </a>
             </li>
           </ul>
         </div>
