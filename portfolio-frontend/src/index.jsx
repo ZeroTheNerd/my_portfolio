@@ -27,12 +27,12 @@ const AppLayout = ({ children }) => {
   const excludedRoutes = ["/"]; // Add any other routes where NavBar should not appear
 
   return (
-    <>
+    <div className = "app-wrapper">
       {/* Render NavBar only if the current route is NOT in excludedRoutes */}
       {!excludedRoutes.includes(location.pathname) && <NavBar />}
       <div className="main-content">{children}</div>
       <Footer />
-    </>
+    </div>
   );
 };
 

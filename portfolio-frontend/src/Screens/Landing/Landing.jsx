@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import "../../styles/global.css";
 import "./Landing.css";
+import linkedinpfp from '../../assets/images/linkedinpfp.png';
 
 const Landing = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -140,7 +141,7 @@ const Landing = () => {
       <div className="landing-left">
         <div className="profile-picture">
           <img
-            src="https://media.licdn.com/dms/image/v2/D4D03AQHwrt0aObto0Q/profile-displayphoto-shrink_400_400/B4DZTXUTcAGkBA-/0/1738779216826?e=2147483647&v=beta&t=IyaLg52hnd6e5Tr7U9juHMWjkkWjpQXt-0QLaSmjU1w"
+            src={linkedinpfp}
             alt="Profile"
             className="profile-img"
           />

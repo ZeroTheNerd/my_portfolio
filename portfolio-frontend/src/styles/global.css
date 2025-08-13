@@ -27,6 +27,20 @@ html {
   background-color: var(--color-background);
 }
 
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* at least full screen height */
+}
+
+.main-content {
+  flex: 1; /* This pushes the footer down */
+  display: flex;
+  flex-direction: column;
+  /* padding-top: 40px; */
+}
+
+
 /* ======================== */
 /* Desktop Environment */
 /* ======================== */

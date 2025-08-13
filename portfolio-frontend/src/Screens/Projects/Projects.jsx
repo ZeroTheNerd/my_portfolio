@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./Projects.css";
 
 const Projects = () => {
@@ -35,11 +36,11 @@ const Projects = () => {
         </ul>
       )}
     </div> */
-
+<div>
+{/* <NavBar /> */}
     <div className="projects-container">
       <h1>Projects</h1>
       <p>Here’s where my portfolio projects will go.
-
       </p>
             <p>Here’s where my portfolio projects will go.
 
@@ -61,65 +62,10 @@ const Projects = () => {
 
       </p>      <p>Here’s where my portfolio projects will go.
 
-      </p>      <p>Here’s where my portfolio projects will go.
+      </p>      <p>Here’s where my portfolio projects will go. </p>
 
-      </p>      <p>Here’s where my portfolio projects will go.
 
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>      <p>Here’s where my portfolio projects will go.
-
-      </p>
+    </div>
     </div>
 
   );
