@@ -19,8 +19,8 @@ app.get('/api/projects', (req, res) => {
     },
     {
       id: 2,
-      name: 'Another Cool Project',
-      url: 'https://github.com/zerothenerd'
+      name: 'PC Builder Simulator',
+      url: 'https://github.com/ZeroTheNerd/pc_builder_simulator'
     }
   ]);
 });
