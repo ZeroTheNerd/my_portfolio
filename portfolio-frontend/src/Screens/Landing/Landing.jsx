@@ -4,6 +4,7 @@ import Draggable from "react-draggable";
 import "../../styles/global.css";
 import "./Landing.css";
 import linkedinpfp from '../../assets/images/linkedinpfp.png';
+import Ulogo from '../../assets/images/Ulogo.png';
 
 const Landing = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -146,6 +147,14 @@ const Landing = () => {
             className="profile-img"
           />
         </div>
+         {/* Add your name and title */}
+        <div className="profile-details">
+          <h2>Zach Martim</h2>
+          <h4>Student Software Engineer</h4>
+          <h4 className = "university-row">University of Utah <img src={Ulogo} alt = "U logo" className="u-logo" /> </h4>
+          <p>Salt Lake City, UT</p>
+        </div>
+
         <div className="card connect-card">
           <h3>Connect with Me</h3>
           <ul>

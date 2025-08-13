@@ -56,7 +56,7 @@ const ChromeLayout = ({ children }) => {
         </div>
         <div className="chrome-body">
           <main className="content-wrapper main-content">{children}</main>
-                  <NavBar />
+          <NavBar />
 
         </div>
         <Footer />
