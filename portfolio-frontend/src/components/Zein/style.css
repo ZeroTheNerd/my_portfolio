@@ -1,11 +1,12 @@
 .zein {
-  height: 66px;
+  height: 100px;
   position: relative;
-  /* overflow: hidden; */
+  /* padding-top: 50px; */
   width: 130px;
 }
 
 .zein .text-wrapper {
+  /* padding-top: 10px; */
   font-size: 55px;
   font-weight: 400;
   left: 0;
@@ -17,6 +18,6 @@
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif; /* Same font as Mosarsaa */
   font-size: 55px; /* Same size as Mosarsaa */
   color: #72817e; /* Consistent color */
-  margin-bottom: 20px; /* Adjust spacing to move Zein higher */
+  /* margin-bottom: 40px; Adjust spacing to move Zein higher */
   margin-left: 50px; /* Move Zein slightly to the right */
 }

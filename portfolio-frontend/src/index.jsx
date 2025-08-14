@@ -10,7 +10,7 @@ import {
 import Footer from "./components/Footer/Footer"; // Import Footer
 import NavBar from "./components/Navigation/NavBar"; // Import NavBar
 import { WindowProvider } from "./context/WindowContext";
-import Additional from "./Screens/Additional/Additional";
+import Skills from "./Screens/Skills/Skills";
 import DigitalResume from "./Screens/DigitalResume/DigitalResume";
 import { PowerShellAnimation } from "./Screens/Element/DesktopScreen";
 import Element from "./Screens/Element/Element";
@@ -48,7 +48,7 @@ root.render(
           <Route path="/landing" element={<Landing />} />
           <Route path="/element" element={<Element />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/additional" element={<Additional />} />
+          <Route path="/Skills" element={<Skills />} />
           <Route path="/DigitalResume" element={<DigitalResume />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           {/* Redirect any unmatched routes to "/" */}

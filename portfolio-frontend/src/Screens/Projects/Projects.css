@@ -1,4 +1,4 @@
-.projects-grid-container {
+.projects-container {
   padding-top: 60px;
   flex: 1;
   min-height: 100vh;
@@ -8,7 +8,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
   gap: 24px;
   margin: 40px auto;
   max-width: 1200px;
@@ -16,7 +16,7 @@
 
 .project-card {
   background: #222;
-  border-radius: 16px;
+  border-radius: 500px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.15);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -61,10 +61,12 @@
   border-radius: 18px;
   padding: 36px 28px;
   position: relative;
-  max-width: 440px;
-  width: calc(100% - 40px);
+  /* max-width: 500px; */
+  width: calc(100% - 1000px);
+  height: calc(100% - 500px);
   box-shadow: 0 10px 32px rgba(0,0,0,0.20);
   text-align: left;
+  justify-content: center;
   animation: fadeIn 0.2s;
 }
 
@@ -82,10 +84,31 @@
   cursor: pointer;
 }
 
+.modal-name{
+  text-align: center;
+}
+
+.modal-description { 
+  text-align: center;
+}
+
 .modal-image {
   width: 100%;
-  height: 160px;
+  height: calc(100% - 100px);
   object-fit: cover;
   margin-bottom: 20px;
   border-radius: 8px;
+}
+
+.modal-github { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GITUHB ICON */
+.modal-github svg { 
+  color: #72817e;
+  width: 48px; /* size of the GitHub icon itself */
+  height: 48px;
 }
