@@ -126,6 +126,7 @@ const Projects = () => {
             </span>
             <h3 className="modal-name">{selected.name}</h3>
             <p className="modal-description">{selected.description}</p>
+            <div className="modal-image-center">
             {selected.images[1] && (
               <a
                 href={selected.url}
@@ -140,6 +141,8 @@ const Projects = () => {
                 </div>
               </a>
             )}
+            </div>
+            
             {/* {selected.video && selected.video.includes("youtube") && (
               <iframe
                 width="100%"

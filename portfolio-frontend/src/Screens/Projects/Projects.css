@@ -148,6 +148,12 @@
   transform: scale(0.9);
 }
 
+.modal-image-center { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-github { 
   display: flex;
   align-items: center;
