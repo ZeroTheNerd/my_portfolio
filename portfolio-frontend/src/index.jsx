@@ -7,8 +7,8 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import Footer from "./components/Footer/Footer"; // Import Footer
-import NavBar from "./components/Navigation/NavBar"; // Import NavBar
+import Footer from "./components/Footer/Footer";
+import NavBar from "./components/Navigation/NavBar";
 import { WindowProvider } from "./context/WindowContext";
 import Skills from "./Screens/Skills/Skills";
 import DigitalResume from "./Screens/DigitalResume/DigitalResume";
@@ -42,7 +42,6 @@ root.render(
     <WindowProvider>
       <AppLayout>
         <Routes>
-          {/* PowerShell Animation is the entry point */}
           <Route path="/" element={<PowerShellAnimation />} />
           {/* Other routes */}
           <Route path="/landing" element={<Landing />} />
