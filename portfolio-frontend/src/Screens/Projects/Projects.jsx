@@ -140,16 +140,16 @@ const Projects = () => {
                 </div>
               </a>
             )}
-            {selected.video && selected.video.includes("youtube") && (
+            {/* {selected.video && selected.video.includes("youtube") && (
               <iframe
                 width="100%"
                 height="315"
-                src={selected.videoUrl}
+                src={selected.video}
                 title="Project video"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
               ></iframe>
-            )}
+            )} */}
             {selected.video && selected.video.endsWith(".mp4") && (
               <video src={selected.video} controls width="100%" />
             )}
