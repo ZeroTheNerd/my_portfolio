@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOMClient from "react-dom/client";
 import {
   Navigate,
@@ -10,13 +9,14 @@ import {
 import Footer from "./components/Footer/Footer";
 import NavBar from "./components/Navigation/NavBar";
 import { WindowProvider } from "./context/WindowContext";
-import Skills from "./Screens/Skills/Skills";
 import DigitalResume from "./Screens/DigitalResume/DigitalResume";
 import { PowerShellAnimation } from "./Screens/Element/DesktopScreen";
 import Element from "./Screens/Element/Element";
+import Extra from "./Screens/Extra/Extra";
 import Landing from "./Screens/Landing/Landing";
 import PrivacyPolicy from "./Screens/Privacy Policy/PrivacyPolicy";
 import Projects from "./Screens/Projects/Projects";
+import Skills from "./Screens/Skills/Skills";
 import "./styles/global.css";
 
 // Wrapper component to conditionally render NavBar
@@ -27,7 +27,7 @@ const AppLayout = ({ children }) => {
   const excludedRoutes = ["/"]; // Add any other routes where NavBar should not appear
 
   return (
-    <div className = "app-wrapper">
+    <div className="app-wrapper">
       {/* Render NavBar only if the current route is NOT in excludedRoutes */}
       {!excludedRoutes.includes(location.pathname) && <NavBar />}
       <div className="main-content">{children}</div>
@@ -49,6 +49,7 @@ root.render(
           <Route path="/projects" element={<Projects />} />
           <Route path="/Skills" element={<Skills />} />
           <Route path="/DigitalResume" element={<DigitalResume />} />
+          <Route path="/Extra" element={<Extra />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           {/* Redirect any unmatched routes to "/" */}
           <Route path="*" element={<Navigate to="/" replace />} />

@@ -39,6 +39,9 @@ const NavBar = () => {
         <button className="nav-link" onClick={() => navigate("/Skills")}>
           Skills
         </button>
+        <button className="nav-link" onClick={() => navigate("/Extra")}>
+          Extras
+        </button>
         <button className="download-button" onClick={handleDownloadResume}>
           Resume
         </button>
