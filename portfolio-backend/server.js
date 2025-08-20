@@ -1,8 +1,8 @@
 const express = require("express");
-const cors = require('cors');
-const path = require('path');
+const cors = require("cors");
+const path = require("path");
 const app = express();
-const port = 5000;
+const port = 5001;
 
 // Middleware
 app.use(cors()); // allow requests from frontend
@@ -35,11 +35,13 @@ app.use(express.json()); // parse incoming JSON
 
 // --- PRODUCTION SETUP ---
 // Serve frontend's build folder if it's been built
-app.use(express.static(path.join(__dirname, '../portfolio-frontend/build')));
+app.use(express.static(path.join(__dirname, "../portfolio-frontend/build")));
 
 // All other GET requests not handled by API routes will return React's index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../portfolio-frontend/build', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../portfolio-frontend/build", "index.html")
+  );
 });
 
 app.get("/", (req, res) => {

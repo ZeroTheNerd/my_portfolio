@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
@@ -7,10 +7,10 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleDownloadResume = () => {
-    const resumeUrl = "../../assets/Files/ZachMartim-Resume.pdf";
+    const resumeUrl = "../../../public/assets/Files/ZachMartimResume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "ZachMartim-Resume.pdf";
+    link.download = "ZachMartimResume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
