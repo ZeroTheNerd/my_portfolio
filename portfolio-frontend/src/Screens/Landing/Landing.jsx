@@ -1,12 +1,11 @@
 // Landing.jsx (Updated)
-import React, { useEffect, useRef, useState } from "react";
-import Draggable from "react-draggable";
+import { useEffect, useRef, useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import linkedinpfp from "../../assets/images/linkedinpfp.png";
+import Ulogo from "../../assets/images/Ulogo.png";
 import "../../styles/global.css";
 import "./Landing.css";
-import linkedinpfp from '../../assets/images/linkedinpfp.png';
-import Ulogo from '../../assets/images/Ulogo.png';
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 
 const Landing = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -19,13 +18,13 @@ const Landing = () => {
   const errorMessage =
     "\tOops! It looks like you've stumbled upon a glitch in the Sim-verse!\n\nHello, I'm Zach Martim, a Student Software Engineer at the University Of Utah's ServiceNow Platform and soon-to-be Computer Science graduate.\n\nDon't worry, this isn't a real error. I'm just excited to connect with fellow tech professionals!";
 
-  const initialMessages = [
-    errorMessage,
-    "I'm passionate about technology and software engineering.",
-    "I bring a unique blend of technical expertise and a global perspective",
-    "Feel free to connect with me to discuss exciting opportunities or collaborations!",
-    "Gaming is a huge part of my life! Let's connect and talk about it!",
-  ];
+  // const initialMessages = [
+  //   errorMessage,
+  //   "I'm passionate about technology and software engineering.",
+  //   "I bring a unique blend of technical expertise and a global perspective",
+  //   "Feel free to connect with me to discuss exciting opportunities or collaborations!",
+  //   "Gaming is a huge part of my life! Let's connect and talk about it!",
+  // ];
 
   // Fixed typing animation with cleanup
   const typeMessage = () => {
@@ -64,96 +63,95 @@ const Landing = () => {
     return () => clearInterval(typingInterval.current);
   }, [isPopupVisible]);
 
-  // Initialize sticky notes with unique IDs
-  useEffect(() => {
-    setStickies(
-      initialMessages.map((text, i) => ({
-        id: Date.now() + i,
-        text,
-        position: getRandomPosition(),
-        color: getRandomColor(),
-      }))
-    );
-  }, []);
+  // // Initialize sticky notes with unique IDs
+  // useEffect(() => {
+  //   setStickies(
+  //     initialMessages.map((text, i) => ({
+  //       id: Date.now() + i,
+  //       text,
+  //       position: getRandomPosition(),
+  //       color: getRandomColor(),
+  //     }))
+  //   );
+  // }, []);
 
-  // Add new sticky note functionality
-  const addSticky = () => {
-    const newSticky = {
-      id: Date.now(),
-      text: newNoteText || "New Note",
-      position: {
-        x: Math.random() * window.innerWidth * 0.3,
-        y: Math.random() * window.innerHeight * 0.3,
-      },
-      color: getRandomColor(), // Add this line
-    };
-    setStickies([...stickies, newSticky]);
-    setNewNoteText("");
-  };
+  // // Add new sticky note functionality
+  // const addSticky = () => {
+  //   const newSticky = {
+  //     id: Date.now(),
+  //     text: newNoteText || "New Note",
+  //     position: {
+  //       x: Math.random() * window.innerWidth * 0.3,
+  //       y: Math.random() * window.innerHeight * 0.3,
+  //     },
+  //     color: getRandomColor(), // Add this line
+  //   };
+  //   setStickies([...stickies, newSticky]);
+  //   setNewNoteText("");
+  // };
 
-  const getRandomColor = () => {
-    const colors = [
-      "#fbee9d", // Yellow
-      "#ffcccb", // Pink
-      "#c7f9cc", // Mint Green
-      "#a0c4ff", // Light Blue
-      "#fdffb6", // Lemon Yellow
-      "#ffc6ff", // Lavender
-      "#ffab73", // Peach
-      "#d4a5a5", // Rose
-      "#bde0fe", // Sky Blue
-      "#caf7e3", // Aqua Mint
-      "#f9c0c0", // Coral Pink
-      "#f1e7fe", // Soft Purple
-    ];
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
+  // const getRandomColor = () => {
+  //   const colors = [
+  //     "#fbee9d", // Yellow
+  //     "#ffcccb", // Pink
+  //     "#c7f9cc", // Mint Green
+  //     "#a0c4ff", // Light Blue
+  //     "#fdffb6", // Lemon Yellow
+  //     "#ffc6ff", // Lavender
+  //     "#ffab73", // Peach
+  //     "#d4a5a5", // Rose
+  //     "#bde0fe", // Sky Blue
+  //     "#caf7e3", // Aqua Mint
+  //     "#f9c0c0", // Coral Pink
+  //     "#f1e7fe", // Soft Purple
+  //   ];
+  //   return colors[Math.floor(Math.random() * colors.length)];
+  // };
 
-  // Updated reset functionality
-  const getRandomPosition = () => ({
-    x: Math.random() * window.innerWidth * 0.6,
-    y: Math.random() * window.innerHeight * 0.6,
-  });
+  // // Updated reset functionality
+  // const getRandomPosition = () => ({
+  //   x: Math.random() * window.innerWidth * 0.6,
+  //   y: Math.random() * window.innerHeight * 0.6,
+  // });
 
-  // Updated reset functionality
-  const resetStickies = () => {
-    setStickies(
-      initialMessages.map((text, i) => ({
-        id: Date.now() + i,
-        text,
-        position: getRandomPosition(),
-        color: getRandomColor(), // Assign random color
-      }))
-    );
-  };
+  // // Updated reset functionality
+  // const resetStickies = () => {
+  //   setStickies(
+  //     initialMessages.map((text, i) => ({
+  //       id: Date.now() + i,
+  //       text,
+  //       position: getRandomPosition(),
+  //       color: getRandomColor(), // Assign random color
+  //     }))
+  //   );
+  // };
 
-  // Handle drag movement
-  const handleDragStop = (e, data, id) => {
-    setStickies(
-      stickies.map((sticky) =>
-        sticky.id === id
-          ? { ...sticky, position: { x: data.x, y: data.y }, isPlaced: true } // Mark as placed
-          : sticky
-      )
-    );
-  };
+  // // Handle drag movement
+  // const handleDragStop = (e, data, id) => {
+  //   setStickies(
+  //     stickies.map((sticky) =>
+  //       sticky.id === id
+  //         ? { ...sticky, position: { x: data.x, y: data.y }, isPlaced: true } // Mark as placed
+  //         : sticky
+  //     )
+  //   );
+  // };
 
   return (
     <div className="landing-container">
       {/* Left Section */}
       <div className="landing-left">
         <div className="profile-picture">
-          <img
-            src={linkedinpfp}
-            alt="Profile"
-            className="profile-img"
-          />
+          <img src={linkedinpfp} alt="Profile" className="profile-img" />
         </div>
-         {/* Add your name and title */}
+        {/* Add your name and title */}
         <div className="profile-details">
           <h2>Zach Martim</h2>
           <h4>Student Software Engineer</h4>
-          <h4 className = "university-row">University of Utah <img src={Ulogo} alt = "U logo" className="u-logo" /> </h4>
+          <h4 className="university-row">
+            University of Utah{" "}
+            <img src={Ulogo} alt="U logo" className="u-logo" />{" "}
+          </h4>
           <p>Salt Lake City, UT</p>
         </div>
 
@@ -181,17 +179,16 @@ const Landing = () => {
               </a>
             </li>
             <li>
-              <a href="zachmartim101@gmail.com"
-                 aria-label="Email" >
-                  <MdEmail />
-                </a>
+              <a href="zachmartim101@gmail.com" aria-label="Email">
+                <MdEmail />
+              </a>
             </li>
           </ul>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="landing-right">
+      {/* <div className="landing-right">
         {isPopupVisible && (
           <div className="popup">
             <div className="popup-content">
@@ -216,12 +213,12 @@ const Landing = () => {
           <div className="sticky-container">
             {/* Error Message (non-draggable) */}
 
-            {stickies.map((sticky) => (
+      {/* {stickies.map((sticky) => (
               <Draggable
                 key={sticky.id}
                 bounds="parent"
                 position={sticky.position}
-                onStop={(e, data) => handleDragStop(e, data, sticky.id)} // Detect placement
+                onStop={(e, data) => handleDragStop(e, data, sticky.id)}
               >
                 <div
                   className="stickynote"
@@ -233,7 +230,7 @@ const Landing = () => {
             ))}
 
             {/* Add New Note Controls */}
-            <div className="controls">
+      {/* <div className="controls">
               <input
                 type="text"
                 value={newNoteText}
@@ -245,7 +242,7 @@ const Landing = () => {
             </div>
           </div>
         )}
-      </div>
+      </div>  */}
     </div>
   );
 };
