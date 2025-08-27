@@ -10,7 +10,7 @@
 .landing-container {
   display: flex;
   height: 100vh;
-  background-color: #f5f5f7;
+  background: #cacfca;
   color: #000;
   font-family: "Arial", sans-serif;
   padding: 20px;
@@ -74,16 +74,16 @@
 }
 
 .university-row {
-  display: inline-flex; /* Aligns text and image side by side */
-  align-items: center; /* Vertically centers them */
-  gap: 8px; /* Adds space between text and image */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Style for the logo itself */
 .u-logo {
-  width: 28px; /* Adjust size as needed */
+  width: 28px;
   height: 28px;
-  vertical-align: middle; /* Further tweaks vertical alignment if needed */
+  vertical-align: middle;
 }
 
 .card {
@@ -139,4 +139,107 @@
 
 .social-links a:hover {
   color: var(--color-accent); /* slightly different on hover */
+}
+
+/*Right Side*/
+.landing-right {
+  min-width: 390px;
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* glassmorphism effect: */
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 2.5rem 2.5rem 1.3rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(60, 90, 90, 0.08);
+  margin-top: 30px;
+  padding: 44px 46px 36px 46px;
+  animation: dropIn 0.7s;
+}
+
+@keyframes dropIn {
+  from {
+    transform: translateY(-32px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.about-me-panel h2 {
+  font-family: inherit;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #14666d;
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+.about-me-panel p,
+.about-me-panel ul {
+  font-size: 1.18rem;
+  color: #232629;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.about-me-panel p span,
+.about-me-panel .about-name {
+  color: #ea3434;
+  font-weight: 600;
+}
+
+.about-me-panel em,
+.about-me-panel .excited {
+  color: #229252;
+  font-weight: 700;
+  font-style: normal;
+}
+.about-me-panel ul {
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+.about-me-panel li {
+  margin-bottom: 10px;
+  color: #195c60;
+  font-size: 1.07rem;
+}
+.about-me-panel li b {
+  color: #00715f;
+}
+
+@media (max-width: 1100px) {
+  .landing-container {
+    flex-direction: column;
+    gap: 0;
+  }
+  .landing-left,
+  .landing-right {
+    align-self: center;
+    margin: 22px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .landing-left,
+  .landing-right {
+    border-radius: 1.5rem !important;
+    padding: 18px 7vw !important;
+    margin: 8px 0 !important;
+    max-width: 97vw;
+  }
+  .profile-img {
+    width: 130px;
+    height: 130px;
+  }
+  .about-me-panel h2 {
+    font-size: 1.35rem;
+  }
+  .about-me-panel p,
+  .about-me-panel ul {
+    font-size: 1rem;
+  }
 }

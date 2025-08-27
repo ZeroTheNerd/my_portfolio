@@ -188,7 +188,7 @@ const Landing = () => {
       </div>
 
       {/* Right Section */}
-      {/* <div className="landing-right">
+      <div className="landing-right">
         {isPopupVisible && (
           <div className="popup">
             <div className="popup-content">
@@ -197,7 +197,7 @@ const Landing = () => {
                 <button
                   onClick={() => {
                     setPopupVisible(false);
-                    resetStickies(); // Add this line
+                    // If you want to reset stickies or perform other actions on close, add here
                   }}
                   className="close-button"
                 >
@@ -210,39 +210,44 @@ const Landing = () => {
         )}
 
         {!isPopupVisible && (
-          <div className="sticky-container">
-            {/* Error Message (non-draggable) */}
-
-      {/* {stickies.map((sticky) => (
-              <Draggable
-                key={sticky.id}
-                bounds="parent"
-                position={sticky.position}
-                onStop={(e, data) => handleDragStop(e, data, sticky.id)}
-              >
-                <div
-                  className="stickynote"
-                  style={{ backgroundColor: sticky.color }}
-                >
-                  {sticky.text}
-                </div>
-              </Draggable>
-            ))}
-
-            {/* Add New Note Controls */}
-      {/* <div className="controls">
-              <input
-                type="text"
-                value={newNoteText}
-                onChange={(e) => setNewNoteText(e.target.value)}
-                placeholder="New note text"
-              />
-              <button onClick={addSticky}>Add Note</button>
-              <button onClick={resetStickies}>Reset Board</button>
-            </div>
+          <div className="about-me-panel">
+            <h2>About Me</h2>
+            <p>
+              Hi, I’m <span className="about-name">Zach Martim</span> - a
+              passionate Student Software Engineer at the University of Utah.
+              Driven by curiosity and creativity, I love building useful tools,
+              collaborating on innovative projects, and finding simple solutions
+              to complex problems.
+            </p>
+            <p>
+              <strong className="about-excited">What gets me excited?</strong>{" "}
+              Tackling coding challenges, finding new ways to grow, and
+              connecting with people who share a love for tech (or games, or
+              amazing coffee!).
+            </p>
+            <ul className="about-facts">
+              <li>
+                I strive for great teamwork and collaboration. I am able to
+                learn the most from others.
+              </li>
+              <li>
+                Outside the screen, which is rare, you can catch me hanging out
+                with friends or jamming to some music.
+              </li>
+              <li>
+                Favorite saying:{" "}
+                <em>
+                  “"If debugging is the process of removing software bugs, then
+                  programming must be the process of putting them in"”
+                </em>
+              </li>
+            </ul>
+            <p>
+              Let’s connect—I'm always open to collaborations and conversation!
+            </p>
           </div>
         )}
-      </div>  */}
+      </div>
     </div>
   );
 };

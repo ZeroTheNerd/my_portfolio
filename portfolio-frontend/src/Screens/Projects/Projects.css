@@ -1,12 +1,12 @@
 .projects-container {
+  background: #cacfca;
   padding-top: 60px;
   flex: 1;
   min-height: 100vh;
-  background: #f9f9f9;
   text-align: center;
 }
 
-.projects-header { 
+.projects-header {
   padding-top: 20px;
   font-weight: bold;
 }
@@ -22,7 +22,7 @@
 .project-card {
   background: #222;
   border-radius: 500px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   overflow: hidden;
@@ -32,7 +32,7 @@
 
 .project-card:hover {
   transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
 }
 
 .project-image {
@@ -53,8 +53,11 @@
 
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(32,32,32,0.75);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(32, 32, 32, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,15 +73,19 @@
   overflow-y: auto;
   width: calc(100% - 500px);
   height: calc(100% - 250px);
-  box-shadow: 0 10px 32px rgba(0,0,0,0.20);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
   text-align: left;
   justify-content: center;
   animation: fadeIn 0.2s;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-close {
@@ -90,13 +97,13 @@
   cursor: pointer;
 }
 
-.modal-name{
+.modal-name {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
 }
 
-.modal-description { 
+.modal-description {
   text-align: center;
 }
 
@@ -111,7 +118,6 @@
   background: none;
   /* padding: 16px 0; */
   padding: 0;
-
 }
 .modal-image {
   display: block;
@@ -121,7 +127,7 @@
   object-fit: cover;
   /* margin-bottom: 20px; */
   border-radius: 8px;
-  transition: transform 0.3s cubic-bezier(.22,.61,.36,1), box-shadow 0.3s;
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.3s;
 }
 
 .modal-image-wrapper::before {
@@ -130,9 +136,8 @@
   inset: 0;
   background: rgba(12, 209, 235, 0.5);
   opacity: 0;
-  transition: 
-    opacity 0.3s cubic-bezier(.22,.61,.36,1), 
-    transform 0.3s cubic-bezier(.22,.61,.36,1);
+  transition: opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
   border-radius: 8px;
   pointer-events: none;
   z-index: 2;
@@ -148,20 +153,20 @@
   transform: scale(0.9);
 }
 
-.modal-image-center { 
+.modal-image-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal-github { 
+.modal-github {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* GITUHB ICON */
-.modal-github svg { 
+.modal-github svg {
   color: #72817e;
   width: 48px; /* size of the GitHub icon itself */
   height: 48px;
