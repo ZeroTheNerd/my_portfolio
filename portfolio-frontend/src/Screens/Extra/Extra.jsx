@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import "../../styles/global.css";
-import "./Extra.css"; // Copy Landing.css here and adjust as needed
+import "./Extra.css";
 
 const errorMessage =
   "\tThis page is a fun extra I made! It's where I enjoy experimenting with features that react has to offer. Including draggable sticky notes!\n\nFeel free to add your own notes or reset the board to see my default messages again.";

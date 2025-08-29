@@ -11,20 +11,10 @@ const Landing = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [dynamicText, setDynamicText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [stickies, setStickies] = useState([]);
-  const [newNoteText, setNewNoteText] = useState("");
   const typingInterval = useRef(null);
 
   const errorMessage =
     "\tOops! It looks like you've stumbled upon a glitch in the Sim-verse!\n\nHello, I'm Zach Martim, a Student Software Engineer at the University Of Utah's ServiceNow Platform and soon-to-be Computer Science graduate.\n\nDon't worry, this isn't a real error. I'm just excited to connect with fellow tech professionals!";
-
-  // const initialMessages = [
-  //   errorMessage,
-  //   "I'm passionate about technology and software engineering.",
-  //   "I bring a unique blend of technical expertise and a global perspective",
-  //   "Feel free to connect with me to discuss exciting opportunities or collaborations!",
-  //   "Gaming is a huge part of my life! Let's connect and talk about it!",
-  // ];
 
   // Fixed typing animation with cleanup
   const typeMessage = () => {
@@ -62,80 +52,6 @@ const Landing = () => {
     }
     return () => clearInterval(typingInterval.current);
   }, [isPopupVisible]);
-
-  // // Initialize sticky notes with unique IDs
-  // useEffect(() => {
-  //   setStickies(
-  //     initialMessages.map((text, i) => ({
-  //       id: Date.now() + i,
-  //       text,
-  //       position: getRandomPosition(),
-  //       color: getRandomColor(),
-  //     }))
-  //   );
-  // }, []);
-
-  // // Add new sticky note functionality
-  // const addSticky = () => {
-  //   const newSticky = {
-  //     id: Date.now(),
-  //     text: newNoteText || "New Note",
-  //     position: {
-  //       x: Math.random() * window.innerWidth * 0.3,
-  //       y: Math.random() * window.innerHeight * 0.3,
-  //     },
-  //     color: getRandomColor(), // Add this line
-  //   };
-  //   setStickies([...stickies, newSticky]);
-  //   setNewNoteText("");
-  // };
-
-  // const getRandomColor = () => {
-  //   const colors = [
-  //     "#fbee9d", // Yellow
-  //     "#ffcccb", // Pink
-  //     "#c7f9cc", // Mint Green
-  //     "#a0c4ff", // Light Blue
-  //     "#fdffb6", // Lemon Yellow
-  //     "#ffc6ff", // Lavender
-  //     "#ffab73", // Peach
-  //     "#d4a5a5", // Rose
-  //     "#bde0fe", // Sky Blue
-  //     "#caf7e3", // Aqua Mint
-  //     "#f9c0c0", // Coral Pink
-  //     "#f1e7fe", // Soft Purple
-  //   ];
-  //   return colors[Math.floor(Math.random() * colors.length)];
-  // };
-
-  // // Updated reset functionality
-  // const getRandomPosition = () => ({
-  //   x: Math.random() * window.innerWidth * 0.6,
-  //   y: Math.random() * window.innerHeight * 0.6,
-  // });
-
-  // // Updated reset functionality
-  // const resetStickies = () => {
-  //   setStickies(
-  //     initialMessages.map((text, i) => ({
-  //       id: Date.now() + i,
-  //       text,
-  //       position: getRandomPosition(),
-  //       color: getRandomColor(), // Assign random color
-  //     }))
-  //   );
-  // };
-
-  // // Handle drag movement
-  // const handleDragStop = (e, data, id) => {
-  //   setStickies(
-  //     stickies.map((sticky) =>
-  //       sticky.id === id
-  //         ? { ...sticky, position: { x: data.x, y: data.y }, isPlaced: true } // Mark as placed
-  //         : sticky
-  //     )
-  //   );
-  // };
 
   return (
     <div className="landing-container">
@@ -179,7 +95,12 @@ const Landing = () => {
               </a>
             </li>
             <li>
-              <a href="zachmartim101@gmail.com" aria-label="Email">
+              <a
+                href="mailto:zachmartim101@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email"
+              >
                 <MdEmail />
               </a>
             </li>
