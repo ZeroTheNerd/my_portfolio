@@ -214,31 +214,34 @@ const Landing = () => {
             <h2>About Me</h2>
             <p>
               Hi, I’m <span className="about-name">Zach Martim</span> - a
-              passionate Student Software Engineer at the University of Utah.
-              Driven by curiosity and creativity, I love building useful tools,
-              collaborating on innovative projects, and finding simple solutions
-              to complex problems.
+              passionate Student Software Engineer for our ServiceNow platform
+              at the University of Utah. I am currently pursuing my degree in
+              Computer Science with an expected graduation date of December
+              2026. Driven by curiosity and creativity, I love building tools,
+              collaborating on innovative projects and finding simple solutions.
             </p>
             <p>
               <strong className="about-excited">What gets me excited?</strong>{" "}
-              Tackling coding challenges, finding new ways to grow, and
+              Tackling coding challenges, participating in hackathons, game jams
+              and even CTF challenges. I love finding new ways to grow, and
               connecting with people who share a love for tech (or games, or
-              amazing coffee!).
+              amazing coffee/drinks!).
             </p>
             <ul className="about-facts">
               <li>
                 I strive for great teamwork and collaboration. I am able to
-                learn the most from others.
+                learn the most from others and find motivation through my peers.
               </li>
               <li>
                 Outside the screen, which is rare, you can catch me hanging out
-                with friends or jamming to some music.
+                with friends, jamming to some music, or on a nice day out with
+                my partner.
               </li>
               <li>
                 Favorite saying:{" "}
                 <em>
-                  “"If debugging is the process of removing software bugs, then
-                  programming must be the process of putting them in"”
+                  “If debugging is the process of removing software bugs, then
+                  programming must be the process of putting them in”
                 </em>
               </li>
             </ul>

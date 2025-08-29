@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 import Buildurpc from "../../assets/images/BuildUrPC.png";
 import Dreamscape from "../../assets/images/Dreamscapelogo.png";
 import focussync from "../../assets/images/FocusSync.png";
 import TanukiHunt from "../../assets/images/TanukiHunt.png";
 import Bemvindos from "../../assets/images/bem-vindos.png";
+import difofguas from "../../assets/images/diffofgaussian.png";
 import docscanner from "../../assets/images/docscanner.png";
+import edgedet from "../../assets/images/edgedetection.png";
+import fpt from "../../assets/images/fourpointtransformdewarp.png";
+
 import pcbuildervideo from "../../assets/videos/FinalProjectVideoDemo.mp4";
 
 import { FaGithub } from "react-icons/fa";
@@ -72,7 +77,12 @@ const projectData = [
     description:
       "Allows you to scan book pages using a mobile camera. Involves detecting and isolating the page area, flattening curled pages, pre-processing for OCR(Optical Character Recognition), and implementing an OCR pipeline to extract searchable text",
     url: "https://github.com/ZeroTheNerd/auto_scanner",
-    images: [docscanner],
+    images: [docscanner, edgedet, difofguas, fpt],
+    modalTextBlocks: [
+      "Detecting and isolating the page area.",
+      "Flattening curled pages using advanced algorithms.",
+      "OCR pipeline extracts searchable text from each image.",
+    ],
     githuburl: "https://github.com/ZeroTheNerd/auto_scanner",
   },
 ];
@@ -90,37 +100,41 @@ const Projects = () => {
       .catch((err) => console.error("Error fetching projects:", err));
   }, []);
 
-  const handleCardClick = (project) => {
-    setSelected(project);
-  };
+  // const handleCardClick = (project) => {
+  //   setSelected(project);
+  // };
 
-  const handleCloseModal = () => {
-    setSelected(null);
-  };
+  // const handleCloseModal = () => {
+  //   setSelected(null);
+  // };
 
   return (
     <div className="projects-container">
       <h2 className="projects-header">
-        Here are a few projects I have worked on in the past or are currently
-        working on.
-        <br /> Note: Most of the github links are to private repositories.
+        <span className="accent">Projects</span> I've built.
+        <br />
+        <span style={{ fontWeight: 400, fontSize: "1.18rem" }}>
+          Note: Some of the github links are to private repositories.
+        </span>
       </h2>
-      <div className="projects-grid">
-        {projectData.map((project) => (
-          <div
-            className="project-card"
-            key={project.id}
-            onClick={() => setSelected(project)}
-          >
-            <img
-              src={project.images[0]}
-              alt={project.name}
-              className="project-image"
-            />
-            <div className="project-title">{project.name}</div>
-          </div>
-        ))}
-      </div>
+      <Fade cascade damping={0.14} triggerOnce>
+        <div className="projects-grid">
+          {projectData.map((project) => (
+            <div
+              className="project-card"
+              key={project.id}
+              onClick={() => setSelected(project)}
+            >
+              <img
+                src={project.images[0]}
+                alt={project.name}
+                className="project-image"
+              />
+              <div className="project-title">{project.name}</div>
+            </div>
+          ))}
+        </div>
+      </Fade>
 
       {selected && (
         <div className="modal-overlay" onClick={() => setSelected(null)}>
@@ -130,7 +144,7 @@ const Projects = () => {
             </span>
             <h3 className="modal-name">{selected.name}</h3>
             <p className="modal-description">{selected.description}</p>
-            <div className="modal-image-center">
+            {/* <div className="modal-image-center">
               {selected.images[1] && (
                 <a
                   href={selected.url}
@@ -139,13 +153,47 @@ const Projects = () => {
                 >
                   <div className="modal-image-wrapper">
                     <img
-                      src={selected.images[0]}
+                      src={selected.images[1]}
                       alt={`${selected.name} screenshot 1`}
                       className="modal-image"
                     />
                   </div>
                 </a>
               )}
+            </div> */}
+            <div className="modal-image-center">
+              {selected.images &&
+                selected.images.slice(1).map((img, idx) => (
+                  <div key={idx} style={{ marginBottom: "30px" }}>
+                    <a
+                      href={selected.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ display: "block", margin: "0 auto" }}
+                    >
+                      <div className="modal-image-wrapper">
+                        <img
+                          src={img}
+                          alt={`${selected.name} screenshot ${idx + 1}`}
+                          className="modal-image"
+                        />
+                      </div>
+                    </a>
+                    {selected.modalTextBlocks &&
+                      selected.modalTextBlocks[idx] && (
+                        <div
+                          style={{
+                            margin: "16px 0",
+                            color: "#229252",
+                            fontSize: "1.08em",
+                            textAlign: "center",
+                          }}
+                        >
+                          {selected.modalTextBlocks[idx]}
+                        </div>
+                      )}
+                  </div>
+                ))}
             </div>
 
             {/* {selected.video && selected.video.includes("youtube") && (

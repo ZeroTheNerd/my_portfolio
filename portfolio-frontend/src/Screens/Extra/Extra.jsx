@@ -4,13 +4,13 @@ import "../../styles/global.css";
 import "./Extra.css"; // Copy Landing.css here and adjust as needed
 
 const errorMessage =
-  "\tOops! It looks like you've stumbled upon a glitch in the Sim-verse!...";
+  "\tThis page is a fun extra I made! It's where I enjoy experimenting with features that react has to offer. Including draggable sticky notes!\n\nFeel free to add your own notes or reset the board to see my default messages again.";
 const initialMessages = [
   errorMessage,
   "I'm passionate about technology and software engineering.",
-  "I bring a unique blend of ...",
-  "Feel free to connect with me...",
-  "Gaming is a huge part of my life!...",
+  "I bring a unique blend of technical expertise and a global perspective",
+  "Feel free to connect with me to discuss exciting opportunities or collaborations!",
+  "Gaming is a huge part of my life! Let's connect and talk about it!",
 ];
 
 const Extras = () => {
