@@ -7,7 +7,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleDownloadResume = () => {
-    const resumeUrl = "/assets/Files/ZachMartimResume.pdf";
+    const resumeUrl = "/assets/Files/ZachMResume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "ZachMartimResume.pdf";
