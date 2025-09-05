@@ -100,14 +100,6 @@ const Projects = () => {
       .catch((err) => console.error("Error fetching projects:", err));
   }, []);
 
-  // const handleCardClick = (project) => {
-  //   setSelected(project);
-  // };
-
-  // const handleCloseModal = () => {
-  //   setSelected(null);
-  // };
-
   return (
     <div className="projects-container">
       <h2 className="projects-header">
