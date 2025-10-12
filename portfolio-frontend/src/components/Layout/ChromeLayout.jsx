@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useWindowState } from "../../context/WindowContext";
 import NavBar from "../Navigation/NavBar";
 import Footer from "../Footer/Footer";
+import ChatWidget from "../ChatWidget/ChatWidget";
 import "./ChromeLayout.css";
 
 const ChromeLayout = ({ children }) => {
@@ -57,7 +58,7 @@ const ChromeLayout = ({ children }) => {
         <div className="chrome-body">
           <main className="content-wrapper main-content">{children}</main>
           <NavBar />
-
+          <ChatWidget />
         </div>
         <Footer />
       </div>
