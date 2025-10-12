@@ -1,45 +1,148 @@
-import { FaCode, FaCogs, FaProjectDiagram, FaTools } from "react-icons/fa";
+import {
+  FaCode,
+  FaPython,
+  FaJava,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+  FaLinux,
+  FaGitAlt,
+  FaAws,
+  FaDatabase,
+  FaHashtag
+} from "react-icons/fa";
+import {
+  SiCplusplus,
+  SiUnity,
+  SiHtml5,
+  SiCss3,
+  SiFastapi
+} from "react-icons/si";
 import "./Skills.css";
 
-// Replace or expand icon libraries as needed!
-
-const skillsData = [
-  {
-    icon: <FaCode />,
-    title: "Programming Languages",
-    description:
-      "Proficient in C, C++, C#, Java, JavaScript, Python, SQL and more. Built desktop apps, web services, and automation scripts across coursework and personal projects.",
-  },
-  {
-    icon: <FaCogs />,
-    title: "Frameworks & Libraries",
-    description:
-      "Hands-on with HTML, CSS, Node.js, FastAPI, Qt, and Unity for building web servers, GUIs, and games. Familiar with React for front-end development.",
-  },
-  {
-    icon: <FaTools />,
-    title: "Tools & Platforms",
-    description:
-      "Experienced with Docker, Linux, Makefiles, ServiceNow's GlideRecords, AWS including AppSync with a GraphQL API and a DynamoDB,  and multiple IDEs. Leveraged containers, scripting, and automation in development.",
-  },
-  {
-    icon: <FaProjectDiagram />,
-    title: "Software Engineering Concepts",
-    description:
-      "Strong foundation in object-oriented programming, data structures and algorithms, version control (Git), and agile/team-based workflows.",
-  },
-];
+const skillsData = {
+  languages: [
+    { name: "Python", icon: <FaPython />, level: 90 },
+    { name: "JavaScript", icon: <FaJs />, level: 85 },
+    { name: "Java", icon: <FaJava />, level: 80 },
+    { name: "C++", icon: <SiCplusplus />, level: 75 },
+    { name: "C#", icon: <FaHashtag />, level: 75 },
+    { name: "SQL", icon: <FaDatabase />, level: 80 },
+  ],
+  frameworks: [
+    { name: "React", icon: <FaReact />, level: 85 },
+    { name: "Node.js", icon: <FaNodeJs />, level: 80 },
+    { name: "FastAPI", icon: <SiFastapi />, level: 75 },
+    { name: "Unity", icon: <SiUnity />, level: 70 },
+    { name: "HTML5", icon: <SiHtml5 />, level: 90 },
+    { name: "CSS3", icon: <SiCss3 />, level: 85 },
+  ],
+  tools: [
+    { name: "Git", icon: <FaGitAlt />, level: 85 },
+    { name: "Docker", icon: <FaDocker />, level: 75 },
+    { name: "Linux", icon: <FaLinux />, level: 80 },
+    { name: "AWS", icon: <FaAws />, level: 70 },
+  ],
+};
 
 const Skills = () => (
   <section className="skills-section">
-    <div className="skills-row">
-      {skillsData.map((skill, idx) => (
-        <div className="skills-card" key={idx}>
-          <div className="skills-icon">{skill.icon}</div>
-          <h3 className="skills-title">{skill.title}</h3>
-          <p className="skills-desc">{skill.description}</p>
+    <div className="skills-container">
+      <h2 className="skills-main-title">Technical Skills</h2>
+      <p className="skills-subtitle">A snapshot of my technical expertise and proficiency</p>
+
+      <div className="skills-category">
+        <h3 className="category-title">
+          <FaCode className="category-icon" />
+          Programming Languages
+        </h3>
+        <div className="skills-grid">
+          {skillsData.languages.map((skill, idx) => (
+            <div className="skill-item" key={idx}>
+              <div className="skill-header">
+                <div className="skill-name-wrapper">
+                  <span className="skill-icon">{skill.icon}</span>
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+                <span className="skill-percentage">{skill.level}%</span>
+              </div>
+              <div className="skill-bar">
+                <div
+                  className="skill-progress"
+                  style={{ width: `${skill.level}%` }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+
+      <div className="skills-category">
+        <h3 className="category-title">
+          <FaReact className="category-icon" />
+          Frameworks & Libraries
+        </h3>
+        <div className="skills-grid">
+          {skillsData.frameworks.map((skill, idx) => (
+            <div className="skill-item" key={idx}>
+              <div className="skill-header">
+                <div className="skill-name-wrapper">
+                  <span className="skill-icon">{skill.icon}</span>
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+                <span className="skill-percentage">{skill.level}%</span>
+              </div>
+              <div className="skill-bar">
+                <div
+                  className="skill-progress"
+                  style={{ width: `${skill.level}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="skills-category">
+        <h3 className="category-title">
+          <FaDocker className="category-icon" />
+          Tools & Platforms
+        </h3>
+        <div className="skills-grid">
+          {skillsData.tools.map((skill, idx) => (
+            <div className="skill-item" key={idx}>
+              <div className="skill-header">
+                <div className="skill-name-wrapper">
+                  <span className="skill-icon">{skill.icon}</span>
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+                <span className="skill-percentage">{skill.level}%</span>
+              </div>
+              <div className="skill-bar">
+                <div
+                  className="skill-progress"
+                  style={{ width: `${skill.level}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="skills-summary">
+        <h3>Additional Expertise</h3>
+        <div className="summary-tags">
+          <span className="tag">Object-Oriented Programming</span>
+          <span className="tag">Data Structures & Algorithms</span>
+          <span className="tag">Agile Methodologies</span>
+          <span className="tag">ServiceNow Platform</span>
+          <span className="tag">GraphQL</span>
+          <span className="tag">RESTful APIs</span>
+          <span className="tag">CI/CD</span>
+          <span className="tag">Responsive Design</span>
+        </div>
+      </div>
     </div>
   </section>
 );
