@@ -4,7 +4,8 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
+  "Access-Control-Allow-Headers":
+    "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
 const OPENAI_API_KEY = Deno.env.get("OPENAI_API_KEY");
@@ -53,44 +54,47 @@ const tools = [
     type: "function",
     function: {
       name: "record_user_details",
-      description: "Use this tool to record that a user is interested in being in touch and provided an email address",
+      description:
+        "Use this tool to record that a user is interested in being in touch and provided an email address",
       parameters: {
         type: "object",
         properties: {
           email: {
             type: "string",
-            description: "The email address of this user"
+            description: "The email address of this user",
           },
           name: {
             type: "string",
-            description: "The user's name, if they provided it"
+            description: "The user's name, if they provided it",
           },
           notes: {
             type: "string",
-            description: "Any additional information about the conversation that's worth recording to give context"
-          }
+            description:
+              "Any additional information about the conversation that's worth recording to give context",
+          },
         },
-        required: ["email"]
-      }
-    }
+        required: ["email"],
+      },
+    },
   },
   {
     type: "function",
     function: {
       name: "record_unknown_question",
-      description: "Always use this tool to record any question that couldn't be answered as you didn't know the answer",
+      description:
+        "Always use this tool to record any question that couldn't be answered as you didn't know the answer",
       parameters: {
         type: "object",
         properties: {
           question: {
             type: "string",
-            description: "The question that couldn't be answered"
-          }
+            description: "The question that couldn't be answered",
+          },
         },
-        required: ["question"]
-      }
-    }
-  }
+        required: ["question"],
+      },
+    },
+  },
 ];
 
 function getSystemPrompt(): string {
@@ -106,7 +110,13 @@ ${LINKEDIN_INFO}
 With this context, please chat with the user, always staying in character as ${name}.`;
 }
 
-async function recordUserDetails(email: string, name: string, notes: string, sessionId: string, supabase: any) {
+async function recordUserDetails(
+  email: string,
+  name: string,
+  notes: string,
+  sessionId: string,
+  supabase: any
+) {
   try {
     const { data: session } = await supabase
       .from("chat_sessions")
@@ -118,7 +128,7 @@ async function recordUserDetails(email: string, name: string, notes: string, ses
       email,
       name: name || "Name not provided",
       notes: notes || "not provided",
-      session_id: session?.id || null
+      session_id: session?.id || null,
     });
 
     console.log(`Recording ${name} with email ${email} and notes ${notes}`);
@@ -129,7 +139,11 @@ async function recordUserDetails(email: string, name: string, notes: string, ses
   }
 }
 
-async function recordUnknownQuestion(question: string, sessionId: string, supabase: any) {
+async function recordUnknownQuestion(
+  question: string,
+  sessionId: string,
+  supabase: any
+) {
   try {
     const { data: session } = await supabase
       .from("chat_sessions")
@@ -139,7 +153,7 @@ async function recordUnknownQuestion(question: string, sessionId: string, supaba
 
     await supabase.from("unknown_questions").insert({
       question,
-      session_id: session?.id || null
+      session_id: session?.id || null,
     });
 
     console.log(`Recording unknown question: ${question}`);
@@ -150,13 +164,17 @@ async function recordUnknownQuestion(question: string, sessionId: string, supaba
   }
 }
 
-async function handleToolCalls(toolCalls: ToolCall[], sessionId: string, supabase: any) {
+async function handleToolCalls(
+  toolCalls: ToolCall[],
+  sessionId: string,
+  supabase: any
+) {
   const results = [];
-  
+
   for (const toolCall of toolCalls) {
     const toolName = toolCall.function.name;
     const args = JSON.parse(toolCall.function.arguments);
-    
+
     let result;
     if (toolName === "record_user_details") {
       result = await recordUserDetails(
@@ -171,53 +189,58 @@ async function handleToolCalls(toolCalls: ToolCall[], sessionId: string, supabas
     } else {
       result = {};
     }
-    
+
     results.push({
       role: "tool",
       content: JSON.stringify(result),
-      tool_call_id: toolCall.id
+      tool_call_id: toolCall.id,
     });
   }
-  
+
   return results;
 }
 
-async function chat(message: string, history: Message[], sessionId: string, supabase: any) {
+async function chat(
+  message: string,
+  history: Message[],
+  sessionId: string,
+  supabase: any
+) {
   const messages = [
     { role: "system", content: getSystemPrompt() },
     ...history,
-    { role: "user", content: message }
+    { role: "user", content: message },
   ];
-  
+
   let done = false;
   let conversationMessages = [...messages];
-  
+
   while (!done) {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${OPENAI_API_KEY}`
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
         messages: conversationMessages,
-        tools: tools
-      })
+        tools: tools,
+      }),
     });
-    
+
     if (!response.ok) {
       throw new Error(`OpenAI API error: ${response.statusText}`);
     }
-    
+
     const data = await response.json();
     const choice = data.choices[0];
-    
+
     if (choice.finish_reason === "tool_calls") {
       const assistantMessage = choice.message;
       const toolCalls = assistantMessage.tool_calls;
       const toolResults = await handleToolCalls(toolCalls, sessionId, supabase);
-      
+
       conversationMessages.push(assistantMessage);
       conversationMessages.push(...toolResults);
     } else {
@@ -240,16 +263,12 @@ Deno.serve(async (req: Request) => {
       throw new Error("OPENAI_API_KEY is not set");
     }
 
-    const supabase = createClient(
-      SUPABASE_URL!,
-      SUPABASE_SERVICE_ROLE_KEY!,
-      {
-        auth: {
-          autoRefreshToken: false,
-          persistSession: false
-        }
-      }
-    );
+    const supabase = createClient(SUPABASE_URL!, SUPABASE_SERVICE_ROLE_KEY!, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    });
 
     const { message, sessionId, history = [] }: ChatRequest = await req.json();
 
@@ -278,7 +297,7 @@ Deno.serve(async (req: Request) => {
     await supabase.from("chat_messages").insert({
       session_id: dbSessionId,
       role: "user",
-      content: message
+      content: message,
     });
 
     const response = await chat(message, history, sessionId, supabase);
@@ -286,29 +305,23 @@ Deno.serve(async (req: Request) => {
     await supabase.from("chat_messages").insert({
       session_id: dbSessionId,
       role: "assistant",
-      content: response
+      content: response,
     });
 
-    return new Response(
-      JSON.stringify({ response }),
-      {
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    return new Response(JSON.stringify({ response }), {
+      headers: {
+        ...corsHeaders,
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
     console.error("Error:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: {
+        ...corsHeaders,
+        "Content-Type": "application/json",
+      },
+    });
   }
 });
