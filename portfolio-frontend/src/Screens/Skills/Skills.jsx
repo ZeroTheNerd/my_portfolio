@@ -1,23 +1,23 @@
 import {
+  FaAws,
   FaCode,
-  FaPython,
+  FaDatabase,
+  FaDocker,
+  FaGitAlt,
+  FaHashtag,
   FaJava,
   FaJs,
-  FaReact,
-  FaNodeJs,
-  FaDocker,
   FaLinux,
-  FaGitAlt,
-  FaAws,
-  FaDatabase,
-  FaHashtag
+  FaNodeJs,
+  FaPython,
+  FaReact,
 } from "react-icons/fa";
 import {
   SiCplusplus,
-  SiUnity,
-  SiHtml5,
   SiCss3,
-  SiFastapi
+  SiFastapi,
+  SiHtml5,
+  SiUnity,
 } from "react-icons/si";
 import "./Skills.css";
 
@@ -50,7 +50,9 @@ const Skills = () => (
   <section className="skills-section">
     <div className="skills-container">
       <h2 className="skills-main-title">Technical Skills</h2>
-      <p className="skills-subtitle">A snapshot of my technical expertise and proficiency</p>
+      <p className="skills-subtitle">
+        A snapshot of my technical expertise and proficiency
+      </p>
 
       <div className="skills-category">
         <h3 className="category-title">
@@ -139,8 +141,6 @@ const Skills = () => (
           <span className="tag">ServiceNow Platform</span>
           <span className="tag">GraphQL</span>
           <span className="tag">RESTful APIs</span>
-          <span className="tag">CI/CD</span>
-          <span className="tag">Responsive Design</span>
         </div>
       </div>
     </div>
