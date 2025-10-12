@@ -19,15 +19,15 @@ Driven by curiosity and creativity, he loves building tools, collaborating on in
 He gets excited about tackling coding challenges, participating in hackathons, game jams, and CTF challenges.
 He strives for great teamwork and collaboration, learning from others and finding motivation through peers.
 Outside of coding, he enjoys hanging out with friends, listening to music, spending time with his partner and playing with his cat, Areen.
-A few of Zachs projects include: PC Builder Simulator (C++, Qt) University of Utah, Fall 2024
+A few of Zachs projects include: PC Builder Simulator (C++, Qt) University of Utah, Fall 2024. Completed as a final project for my Software Development 2 course.
 • Developed the backend using the Box2D physics library, enabling users to research and select PC components
 within a budget while receiving detailed specifications and price comparisons.
-Automated Task Generation (Javascript) ServiceNow
+Automated Task Generation (Javascript) ServiceNow. Created for a client project at ServiceNow.
 • Developed a script backing a catalog item to automate task creation, generating tasks at user-defined intervals.
-Teammato (React, AWS Appsync) Summer 2025 – Present
+Teammato (React, AWS Appsync) Summer 2025 – Present. Building with a group of friends as a side project to dive deeper into AWS AppSync and React.
 • Developed and designed a browser-based application using a React frontend and AWS AppSync backend, en-
 abling users to join servers and chat rooms for collaboration and study efficiency.
-Pre-Launch Product Analytics (Python) Redo Agentic AI Hackathon, Aug 2025
+Pre-Launch Product Analytics (Python) Redo Agentic AI Hackathon, Aug 2025. 
 • Built an agentic AI platform modeling user behavior through profile-driven agents, enabling companies to forecast
 product performance and optimize e-commerce strategies.
 Inversion Avengers (React, Node.js, Javascript, FastAPI) University of Utah Air Quality Hackathon, June 2025
@@ -36,12 +36,15 @@ strategies for reducing personal carbon footprint.
 SoundScape (Node.js, ElevenLabs, Runware) Weber State University AI Hackathon, October 2025
 • Developed an AI-powered music generator that creates personalized soundscapes based on the current contents of the users screen by capturing screen data, 
 utilizing ElevenLabs for voice synthesis and Runware for "Aura" image generation. 
+
 `;
 
 const LINKEDIN_INFO = `
 Zach Martim
 Student Software Engineer at University of Utah
 Salt Lake City, UT
+Courses: Data Structures and Algorithms, Algorithms, Computer Systems, Databases, Artificial Intelligence, Machine Learning
+Skills: Java, Python, C++, JavaScript, React, Node.js, SQL, Git, Agile Methodologies, Problem Solving, Team Collaboration
 Computer Science Student
 Expected Graduation: December 2026
 `;
