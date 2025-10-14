@@ -1,6 +1,6 @@
 # Zach Martim's Portfolio Website
 
-A modern, interactive portfolio showcasing my professional experience, technical skills, and projects. Built with React and featuring a unique desktop-inspired interface with advanced UI/UX design patterns.
+A modern, interactive portfolio showcasing my professional experience, technical skills, and projects. Built with React and featuring a unique desktop-inspired interface with advanced UI/UX design patterns. Feel free to check it out at zachmportfolio.vercel.app.
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Live-success)
 ![React](https://img.shields.io/badge/React-18.3.1-blue)
