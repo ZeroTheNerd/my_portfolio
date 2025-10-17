@@ -70,11 +70,6 @@ A modern, interactive portfolio showcasing my professional experience, technical
 
 This is a personal portfolio project, but suggestions and feedback are welcome!
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Commit changes (`git commit -am 'Add new feature'`)
-4. Push to branch (`git push origin feature/improvement`)
-5. Open a Pull Request
 
 ## License
 
@@ -83,13 +78,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## Contact
 
 **Zach Martim**
-- Portfolio: [Your Live URL]
 - LinkedIn: [linkedin.com/in/zachmartim](https://linkedin.com/in/zachmartim)
 - GitHub: [github.com/ZeroTheNerd](https://github.com/ZeroTheNerd)
 - Email: zachmartim101@gmail.com
 
 - All open-source contributors
-
----
-
-Built with ❤️ by Zach Martim | Student Software Engineer @ University of Utah
