@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
-import Buildurpc from "../../assets/images/BuildUrPC.png";
-import Dreamscape from "../../assets/images/Dreamscapelogo.png";
-import focussync from "../../assets/images/FocusSync.png";
-import TanukiHunt from "../../assets/images/TanukiHunt.png";
 import Bemvindos from "../../assets/images/bem-vindos.png";
+import Buildurpc from "../../assets/images/BuildUrPC.png";
 import difofguas from "../../assets/images/diffofgaussian.png";
 import docscanner from "../../assets/images/docscanner.png";
+import Dreamscape from "../../assets/images/Dreamscapelogo.png";
 import edgedet from "../../assets/images/edgedetection.png";
+import focussync from "../../assets/images/FocusSync.png";
 import fpt from "../../assets/images/fourpointtransformdewarp.png";
+import qrover from "../../assets/images/QRover.png";
+import TanukiHunt from "../../assets/images/TanukiHunt.png";
 
 import pcbuildervideo from "../../assets/videos/FinalProjectVideoDemo.mp4";
 
@@ -91,7 +92,7 @@ const projectData = [
     description:
       "Uses Q-learning Reinforcement Learning to allow a Mars rover to find the best path from a start location to a target location through rough terrain modeled in a 3D Mars-like landscape powered by Three.js",
     url: "https://github.com/ZeroTheNerd/CrimsonHacksFinal",
-    images: [TanukiHunt, TanukiHunt],
+    images: [qrover, qrover],
     githuburl: "https://github.com/ZeroTheNerd/CrimsonHacksFinal",
   },
 ];
