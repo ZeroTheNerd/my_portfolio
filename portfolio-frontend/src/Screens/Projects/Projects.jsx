@@ -85,6 +85,15 @@ const projectData = [
     ],
     githuburl: "https://github.com/ZeroTheNerd/auto_scanner",
   },
+  {
+    id: 8,
+    name: "Rover-Q",
+    description:
+      "Uses Q-learning Reinforcement Learning to allow a Mars rover to find the best path from a start location to a target location through rough terrain modeled in a 3D Mars-like landscape powered by Three.js",
+    url: "https://github.com/ZeroTheNerd/CrimsonHacksFinal",
+    images: [TanukiHunt, TanukiHunt],
+    githuburl: "https://github.com/ZeroTheNerd/CrimsonHacksFinal",
+  },
 ];
 
 const Projects = () => {
